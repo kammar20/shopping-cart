@@ -12,8 +12,8 @@ export function CartContextProvider({ children }) {
 
   // Add Item to the Cart or Increase quantity
   function addToCart(id, count = 1) {
-    const selectedItem = cartItem.find((item) => item.id === id);
     // if item already present in cart increase quantity by 1
+    const selectedItem = cartItem.find((item) => item.id === id);
     if (selectedItem) {
       const updateCart = cartItem.map((item) =>
         item.id === id ? { ...item, quantity: item.quantity + count } : item
